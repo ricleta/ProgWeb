@@ -1,12 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json
 {
-  "name": "Python 3 - Django Dev",
-  "image": "mcr.microsoft.com/devcontainers/python:0-3.11-bullseye",
-
-  // Add any devcontainer features you want
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
-  },
+  "name": "WebDev",
+  "image": "mcr.microsoft.com/devcontainers/universal",
 
   // VS Code Extensions to install automatically
   "customizations": {
