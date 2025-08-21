@@ -6,16 +6,11 @@
   // VS Code Extensions to install automatically
   "customizations": {
     "vscode": {
+      "settings": {
+        "workbench.colorTheme": "Visual Studio Dark"
+      },
       "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "batisteo.vscode-django",
-        "ms-azuretools.vscode-docker",
-        "ms-python.black-formatter",
-        "ms-python.isort",
-        "ms-python.flake8",
-        "Google.geminicodeassist",
-        "alexcvzz.vscode-sqlite"
+        "Google.geminicodeassist"
       ]
     }
   },
@@ -24,8 +19,5 @@
   "forwardPorts": [8000],
 
   // Install dependencies from requirements.txt if it exists in root or .devcontainer/
-  "postCreateCommand": "pip install --user -r $( [ -f requirements.txt ] && echo requirements.txt || echo .devcontainer/requirements.txt )",
-
-  // Optional: non-root user settings
-  "remoteUser": "vscode"
+  "postCreateCommand": "pip install --user -r $( [ -f requirements.txt ] && echo requirements.txt || echo .devcontainer/requirements.txt )"
 }
