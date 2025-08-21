@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    container_name: prog_web
+    ports:
+    - "8080:80"
+    # the volumes below allow for hot reloading
+    # better for development but shipping should have the pages directly in the docker image
+    # volumes:
+    # - ./pages:/usr/local/apache2/htdocs
