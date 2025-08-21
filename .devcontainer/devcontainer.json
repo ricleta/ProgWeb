@@ -1,26 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json
 {
-  "name": "Python 3 - Django Dev",
-  "image": "mcr.microsoft.com/devcontainers/python:0-3.11-bullseye",
-
-  // Add any devcontainer features you want
-  "features": {
-    "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
-  },
+  "name": "WebDev",
+  "image": "mcr.microsoft.com/devcontainers/universal",
 
   // VS Code Extensions to install automatically
   "customizations": {
     "vscode": {
+      "settings": {
+        "workbench.colorTheme": "Visual Studio Dark"
+      },
       "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "batisteo.vscode-django",
-        "ms-azuretools.vscode-docker",
-        "ms-python.black-formatter",
-        "ms-python.isort",
-        "ms-python.flake8",
-        "Google.geminicodeassist",
-        "alexcvzz.vscode-sqlite"
+        "Google.geminicodeassist"
       ]
     }
   },
@@ -29,8 +19,5 @@
   "forwardPorts": [8000],
 
   // Install dependencies from requirements.txt if it exists in root or .devcontainer/
-  "postCreateCommand": "pip install --user -r $( [ -f requirements.txt ] && echo requirements.txt || echo .devcontainer/requirements.txt )",
-
-  // Optional: non-root user settings
-  "remoteUser": "vscode"
+  "postCreateCommand": "pip install --user -r $( [ -f requirements.txt ] && echo requirements.txt || echo .devcontainer/requirements.txt )"
 }
