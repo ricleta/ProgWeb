@@ -10,7 +10,8 @@
         "workbench.colorTheme": "Visual Studio Dark"
       },
       "extensions": [
-        "Google.geminicodeassist"
+        "Google.geminicodeassist",
+        "ms-python.python"
       ]
     }
   },
