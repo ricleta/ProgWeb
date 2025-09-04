@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contatos</title>
+</head>
+<body>
+    <h1>Meus Contatos</h1>
+    {% if pessoas %}
+        <ul>
+            {% for pessoa in pessoas %}
+                <li>{{ pessoa.nome }} - {{ pessoa.email }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum contato cadastrado.</p>
+    {% endif %}
+</body>
+</html>
