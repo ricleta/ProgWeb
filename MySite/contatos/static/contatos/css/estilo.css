@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/*
+Para incluir essa folha de estilo, utilize:
+<link rel="stylesheet"
+href="{% static 'contatos/css/estilo.css' %}">
+Não se esqueça de incluir a tag {% load static %}
+*/
+/* Ajuda de formulário */
+.helptext {
+ font-size: 10px;
+}
+/* Lista de erros no formulário */
+.errorlist {
+ color: #FF0000;
+list-style-type: none;
+}
+/* somente th dentro de uma tag da classe formulário */
+.formulario th {
+ text-align: right;
+vertical-align: text-top;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px; /* Add some space below the navbar */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* General Table Styles for listaContatos */
+.lista-contatos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.lista-contatos thead tr {
+    background-color: #333;
+    color: #ffffff;
+    text-align: left;
+}
+
+.lista-contatos th,
+.lista-contatos td {
+    padding: 12px 15px;
+}
+
+.lista-contatos tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.lista-contatos tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.lista-contatos tbody tr:last-of-type {
+    border-bottom: 2px solid #333;
+}
+
+/* Form Styles */
+form fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style form inputs */
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Makes sure padding doesn't affect width */
+}
+
+/* Style the submit button */
+form button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s, border-radius 0.3s ease-in, color 0.3s ease-in;
+}
+
+form button[type="submit"]:hover {
+    background-color: #555; /* A slightly lighter black for hover */
+    border-radius: 25%;
+}
+
+/* Style for links that should look like buttons */
+.button-link {
+    display: inline-block;
+    background-color: #6c757d; /* A neutral grey */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 10px;
+    transition: background-color 0.3s, border-radius 0.3s ease-in, color 0.3s ease-in;
+}
+
+.button-link:hover {
+    background-color: #5a6268;
+    border-radius: 25%;
+}

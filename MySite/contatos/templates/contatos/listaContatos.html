@@ -1,19 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Contatos</title>
-</head>
-<body>
-    <h1>Meus Contatos</h1>
-    {% if pessoas %}
-        <ul>
-            {% for pessoa in pessoas %}
-                <li>{{ pessoa.nome }} - {{ pessoa.email }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>Nenhum contato cadastrado.</p>
-    {% endif %}
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista Contatos</title>
+        <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    </head>
+    <body>
+        {% include 'contatos/links.html' %}
+        <h1>Lista de Contatos</h1>
+        <table class="lista-contatos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Salário</th>
+                    <th>Ações disponíveis</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pessoa in pessoas %}
+                    <tr>
+                        <td>{{ pessoa.nome }}</td><td>{{pessoa.idade }}</td><td>{{ pessoa.salario }}</td>
+                        <td>
+                            <a href="{% url 'contatos:update-contato' pk=pessoa.pk %}" class="button-link">Atualizar</a>
+                            <a href="{% url 'contatos:delete-contato' pk=pessoa.pk %}" class="button-link">Excluir</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                <tr><td colspan="4" style="text-align: center;">Ainda não tem contatos cadastrados</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
 </html>

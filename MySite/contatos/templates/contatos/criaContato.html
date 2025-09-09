@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cria Contato</title>
+        <link rel="stylesheet"
+            href="{% static 'contatos/css/estilo.css' %}">
+        </head>
+    <body>
+        {% include 'contatos/links.html' %}
+        <h1>{% if object %}Atualizar Contato{% else %}Criar um Contato{% endif %}</h1>
+        <form action="" method="POST">
+            <fieldset style="width: max-content;">
+            <legend>Formulário de Cadastro</legend>
+            {% csrf_token %}
+            <table class='formulario'>
+                {{ formulario.as_table }}
+            </table>
+            <button type="submit">{% if object %}Atualizar{% else %}Criar{% endif %}</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
