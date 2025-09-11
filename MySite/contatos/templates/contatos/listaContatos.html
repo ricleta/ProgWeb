@@ -24,7 +24,7 @@
                         <td>{{ pessoa.nome }}</td><td>{{pessoa.idade }}</td><td>{{ pessoa.salario }}</td>
                         <td>
                             <a href="{% url 'contatos:update-contato' pk=pessoa.pk %}" class="button-link">Atualizar</a>
-                            <a href="{% url 'contatos:delete-contato' pk=pessoa.pk %}" class="button-link">Excluir</a>
+                            <a href="{% url 'contatos:delete-contato' pk=pessoa.pk %}" class="button-danger"> Excluir</a>
                         </td>
                     </tr>
                 {% empty %}

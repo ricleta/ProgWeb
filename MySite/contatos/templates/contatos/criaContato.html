@@ -17,6 +17,7 @@
                 {{ formulario.as_table }}
             </table>
             <button type="submit">{% if object %}Atualizar{% else %}Criar{% endif %}</button>
+            <a href="{% url 'contatos:lista-contatos' %}" class="button-danger">Cancelar</a>
             </fieldset>
         </form>
     </body>

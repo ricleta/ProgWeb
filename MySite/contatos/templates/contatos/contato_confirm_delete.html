@@ -12,7 +12,7 @@
             {% csrf_token %}
             <p>Você tem certeza que quer excluir o contato "{{ object.nome }}"?</p>
             
-            <button type="submit">Sim, excluir</button>
+            <button class="button-danger">Sim, excluir</button>
             <a href="{% url 'contatos:lista-contatos' %}" class="button-link">Cancelar</a>
         </form>
     </body>

@@ -7,5 +7,5 @@ urlpatterns = [
     path('update/<int:pk>/', views.ContatoUpdateView.as_view(), name='update-contato'),
     path('delete/<int:pk>/', views.ContatoDeleteView.as_view(), name='delete-contato'),
     path('lista/', views.ContatoListView.as_view(), name='lista-contatos'),
-    path('', views.ContatoListView.as_view(), name='home-contatos'),
+    path('', views.IndexView.as_view(), name='home-contatos'),
 ]

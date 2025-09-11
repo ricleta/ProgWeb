@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bem-vindo ao Gerenciador de Contatos</title>
+        <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    </head>
+    <body>
+        {% include 'contatos/links.html' %}
+        <h1>Bem-vindo ao Gerenciador de Contatos</h1>
+        <p>Este é um site simples para gerenciar sua lista de contatos.</p>
+        <h2>Funcionalidades:</h2>
+        <div class="card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>Listar Contatos</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Veja todos os contatos cadastrados em uma lista organizada.</p>
+                        <a href="{% url 'contatos:lista-contatos' %}" class="button-link" style="background-color: #555; margin-top: 10px;">Ir para a Lista</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>Adicionar Contato</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Adicione uma nova pessoa à sua lista de contatos.</p>
+                        <a href="{% url 'contatos:cria-contato' %}" class="button-link" style="background-color: #555; margin-top: 10px;">Adicionar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

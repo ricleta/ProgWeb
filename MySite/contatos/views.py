@@ -1,8 +1,13 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Pessoa
 from .forms import ContatoModel2Form
+
+class IndexView(TemplateView):
+    template_name = 'contatos/index.html'
+    success_url = reverse_lazy('contatos:home-contatos')
+
 
 class ContatoListView(ListView):
     model = Pessoa
