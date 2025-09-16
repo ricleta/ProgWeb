@@ -11,3 +11,13 @@ class Pessoa(models.Model):
    
     def __str__(self):
         return self.nome
+
+class Endereco(models.Model):
+    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE, related_name='enderecos')
+    logradouro = models.CharField(max_length=200, help_text='Entre o logradouro')
+    cidade = models.CharField(max_length=100, help_text='Entre a cidade')
+    estado = models.CharField(max_length=100, help_text='Entre o estado')
+    cep = models.CharField(max_length=20, help_text='Entre o CEP')
+
+    def __str__(self):
+        return f'{self.logradouro}, {self.cidade} - {self.estado}, {self.cep}'

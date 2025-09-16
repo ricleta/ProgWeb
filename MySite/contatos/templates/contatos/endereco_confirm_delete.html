@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirmar Exclusão</title>
+        <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    </head>
+    <body>
+        {% include 'contatos/links.html' %}
+        <h1>Excluir Contato</h1>
+        <form method="post">
+            {% csrf_token %}
+            <p>Você tem certeza que quer excluir o endereco "{{ object }}"?</p>
+            
+            <button class="button-danger">Sim, excluir</button>
+            <a href="{% url 'contatos:lista-contatos' %}" class="button-link">Cancelar</a>
+        </form>
+    </body>
+</html>

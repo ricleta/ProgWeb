@@ -2,23 +2,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% if object %}Atualizar Contato{% else %}Criar um Contato{% endif %}</title>
+        <title>{% if object %}Atualizar Endereço{% else %}Adicionar Endereço{% endif %}</title>
         <link rel="stylesheet"
             href="{% static 'contatos/css/estilo.css' %}">
         </head>
     <body>
         {% include 'contatos/links.html' %}
-        <h1>{% if object %}Atualizar Contato{% else %}Criar um Contato{% endif %}</h1>
+        <h1>{% if object %}Atualizar Endereço de {{ object.pessoa.nome }}{% else %}Adicionar Endereço para {{ pessoa.nome }}{% endif %}</h1>
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset style="width: max-content;">
-                <legend>Dados do Contato</legend>
-                <table class='formulario'>
-                    {{ formulario.as_table }}
-                </table>
-            </fieldset>
-
-            <fieldset style="width: max-content; margin-top: 20px;">
                 <legend>Endereço</legend>
                 <table class='formulario'>
                     {{ endereco_form.as_table }}

@@ -27,6 +27,46 @@
                             <a href="{% url 'contatos:delete-contato' pk=pessoa.pk %}" class="button-danger"> Excluir</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="4" class="endereco-container">
+                            <strong>Endereços:</strong>
+                            <table class="endereco-table">
+                                <thead>
+                                    <tr class="endereco-table-header">
+                                        <th class="endereco-table-cell">Logradouro</th>
+                                        <th class="endereco-table-cell">Cidade</th>
+                                        <th class="endereco-table-cell">Estado</th>
+                                        <th class="endereco-table-cell">CEP</th>
+                                        <th class="endereco-table-cell">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for endereco in pessoa.enderecos.all %}
+                                        <tr>
+                                            <td class="endereco-table-data">{{ endereco.logradouro }}</td>
+                                            <td class="endereco-table-data">{{ endereco.cidade }}</td>
+                                            <td class="endereco-table-data">{{ endereco.estado }}</td>
+                                            <td class="endereco-table-data">{{ endereco.cep }}</td>
+                                            <td class="endereco-table-data">
+                                                <a href="{% url 'contatos:update-endereco' pk=endereco.pk %}" class="button-link endereco-action-button">Atualizar</a>
+                                                <a href="{% url 'contatos:delete-endereco' pk=endereco.pk %}" class="button-danger endereco-action-button">Excluir</a>
+                                            </td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="5" style="padding: 8px; border: 1px solid #ddd;"><em>Sem endereços cadastrados.</em></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" style="padding-top: 10px;">
+                                            <a href="{% url 'contatos:cria-endereco' fk=pessoa.pk %}" class="button-link">Adicionar Endereço</a>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </td>
                 {% empty %}
                 <tr><td colspan="4" style="text-align: center;">Ainda não tem contatos cadastrados</td></tr>
                 {% endfor %}

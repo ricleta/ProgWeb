@@ -2,7 +2,7 @@
 @author: Ricardo
 '''
 from django import forms
-from contatos.models import Pessoa
+from contatos.models import Pessoa, Endereco
 
 class ContatoModel2Form(forms.ModelForm):
  dtNasc = forms.DateField(
@@ -45,3 +45,13 @@ class ContatoModel2Form(forms.ModelForm):
     if nome and not all(char.isalpha() or char.isspace() for char in nome):
         raise forms.ValidationError("O nome deve conter apenas letras e espaços.")
     return nome
+
+class EnderecoForm(forms.ModelForm):
+    logradouro = forms.CharField(max_length=200, required=True, help_text='Entre o logradouro')
+    cidade = forms.CharField(max_length=100, required=True, help_text='Entre a cidade')
+    estado = forms.CharField(max_length=100, required=True, help_text='Entre o estado')
+    cep = forms.CharField(max_length=20, required=True, help_text='Entre o CEP')
+
+    class Meta:
+        model = Endereco
+        fields = ['logradouro', 'cidade', 'estado', 'cep']
