@@ -1,0 +1,16 @@
+{%extends 'MySite/seguranca/base.html'%}
+
+{%block title%}
+    Página de Segurança
+{%endblock%}
+
+{%block conteudo%}
+    <h2>Bem-vindo à Página de Segurança</h2>
+    <p>Esta é uma área protegida do site.</p>
+
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}!
+    {% else %}
+        <a href="{% url 'register' %}">Registrar</a>
+    {% endif %}
+{%endblock%}

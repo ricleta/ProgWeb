@@ -23,4 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("contatos/", include("contatos.urls")),
     path('', views.IndexView.as_view(), name='home'),
+    path('account/', views.HomeSecView.as_view(), name='home-sec'),
+    path('accounts/register/', views.register, name='register'),
 ]

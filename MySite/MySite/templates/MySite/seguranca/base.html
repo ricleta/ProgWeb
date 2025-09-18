@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block titulo %}{% endblock %}</title>
+        <link rel="stylesheet"
+        href="{% static 'contatos/css/estilo.css' %}">
+    </head>
+    <body>
+        {% include 'contatos/links.html' %}
+        <h1>Site Seguro</h1>
+        <div>
+            Você é {% firstof user.username "visitante" %}
+        </div>
+        <hr>
+        <div>
+            {% block conteudo %}{% endblock %}
+        </div>
+    </body>
+</html>

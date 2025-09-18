@@ -9,6 +9,7 @@
         {% include 'contatos/links.html' %}
         <h1>Bem-vindo ao Gerenciador de Contatos</h1>
         <p>Este é um site simples para gerenciar sua lista de contatos.</p>
+        <p> Você é {% firstof user.username "visitante" %}.</p>
         <h2>Funcionalidades:</h2>
         <div class="card-container">
             <div class="flip-card">
