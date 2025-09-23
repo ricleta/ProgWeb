@@ -18,11 +18,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("contatos/", include("contatos.urls")),
     path('', views.IndexView.as_view(), name='home'),
     path('account/', views.HomeSecView.as_view(), name='home-sec'),
-    path('accounts/register/', views.register, name='register'),
+    path('account/register/', views.register, name='register'),
+    path('account/login/', LoginView.as_view(template_name='MySite/seguranca/login.html'), name='login'),
+    path('account/logout/', views.logout, name='logout'),
+    path('actual/logout/', LogoutView.as_view(next_page='home-sec'), name='actual-logout'),
+    path('account/secret/', views.secret_page, name='secret-page'),
+    path('account/password_change/', views.ChangePasswordView.as_view(), name='password_change'),
+    path('account/password_change/done/', views.PasswordChangeDoneView.as_view(), name='password_change_done')
 ]

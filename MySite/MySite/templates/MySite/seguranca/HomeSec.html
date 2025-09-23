@@ -11,6 +11,7 @@
     {% if user.is_authenticated %}
         Hello, {{ user.username }}!
     {% else %}
-        <a href="{% url 'register' %}">Registrar</a>
+        <a href="{% url 'register' %}">Registrar</a> <br>
+        <a href="{% url 'login' %}?next={% url 'secret-page' %}">Login</a>
     {% endif %}
 {%endblock%}
