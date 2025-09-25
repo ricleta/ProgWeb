@@ -1,9 +1,9 @@
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
+from .forms import SignUpForm
 
 class IndexView(TemplateView):
     template_name = 'MySite/index.html'
@@ -15,12 +15,12 @@ class HomeSecView(TemplateView):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home-sec')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     context = {'form': form}
     return render(request, 'MySite/seguranca/registro.html', context)
 
