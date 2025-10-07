@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JS Examples</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/comparadores.js"></script>
+  <script src="js/rascunho.js"></script>
   <script src="js/clock.js" defer></script>
 </head>
 <body>
   <div id="main-container">
-    <h1 class="clock_text">Analog Clock</h1>
+    <div id="clock-hook"></div>
     <div class="analog-clock">
       <div class="hand hour-hand"></div>
       <div class="hand minute-hand"></div>
@@ -29,8 +29,30 @@
       <div class="number number-12">12</div>
       <div class="center-dot"></div>
     </div>
-    <h2>Comparadores Output</h2>
-    <div id="output"></div>
+    
+    <div id="output">
+      <!-- Added class="form" to match CSS and removed outdated action attribute -->
+      <form id="myForm" class="form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <!-- Corrected 'for' attribute to match input id -->
+          <label for="n1">N1:</label>
+          <input type="number" id="n1" name="n1" required>
+        </div>
+        <div class="form-group">
+          <!-- Corrected 'for' attribute to match input id -->
+          <label for="n2">N2:</label>
+          <input type="number" id="n2" name="n2" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="result">
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
