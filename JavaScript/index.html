@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/rascunho.js"></script>
   <script src="js/clock.js" defer></script>
+  <script src="typescript/innerHTML.js" defer></script>
 </head>
 <body>
+  
   <div id="main-container">
+    <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dom.html">DOM</a>
+        </div>
     <div id="clock-hook"></div>
     <div class="analog-clock">
       <div class="hand hour-hand"></div>
@@ -53,6 +59,13 @@
       </div>
     </div>
 
+    <div id="idDiv"> </div>
+    <div id="innerHTML-hook">
+      <button id="idInnerHTML">innerHTML</button>
+    </div>
+    <div id="appendChild-hook">
+      <button id="idAppendChild">appendChild</button>
+    </div>
   </div>
 </body>
 </html>

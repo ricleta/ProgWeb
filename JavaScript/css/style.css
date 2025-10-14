@@ -165,3 +165,34 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Styles for the dynamically added phone fields on dom.html */
+#phones div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Space between multiple phone inputs */
+}
+
+#phones input {
+  flex-grow: 1; /* Allow input to take up available space */
+  margin-right: 0.5rem;
+}
+
+.navbar {
+  background-color: #282828;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
