@@ -11,3 +11,19 @@ class SignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields = UserCreationForm.Meta.fields + ('email',)
+
+class FormularioExemplo(forms.Form):
+    """
+    A simple example form with a name and email field.
+    """
+    nome = forms.CharField(label='Nome', max_length=100)
+    email = forms.EmailField(label='Email', max_length=100)
+    search_field = forms.CharField(label='Search', max_length=100, required=False, widget=forms.TextInput(attrs={'placeholder': 'Search...', 'type': 'search'}))
+    date = forms.DateField(label='Date',input_formats=['%d/%m/%Y', '%Y-%m-%d'],
+    help_text='Selecione a data no calendário.',
+    error_messages={
+        'invalid': 'Por favor, use um dos formatos: DD/MM/AAAA ou AAAA-MM-DD.'
+    },
+    widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'})
+    )
+    cor = forms.CharField(label='Cor', max_length=7, initial="#FF0000", widget=forms.TextInput(attrs={'type': 'color'}))

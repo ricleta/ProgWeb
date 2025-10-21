@@ -59,5 +59,7 @@ urlpatterns = [
             template_name='MySite/seguranca/password_reset_complete.html'
         ),
         name='sec-password_reset_complete'
-    )
+    ),
+    path('formulario/', views.FormularioView.as_view(), name='formulario'),
+    path('carros/', include('carros.urls')),
 ]

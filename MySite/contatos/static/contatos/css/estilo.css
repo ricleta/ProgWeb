@@ -257,3 +257,10 @@ form button[type="submit"]:hover {
   color: white;
   transform: rotateY(180deg);
 }
+
+/* Style for the Three.js cube container */
+#cube-container {
+    width: 300px;
+    height: 200px;
+    cursor: grab;
+}

@@ -1,7 +1,8 @@
 # Core framework
 django>=4.2,<5.0
 
-# SQLite support is built-in to Python, no extra packages needed
+djangorestframework
+django-cors-headers
 
 # Dev tools (optional but highly recommended)
 black

@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
-from .forms import SignUpForm
+from .forms import SignUpForm, FormularioExemplo
 
 class IndexView(TemplateView):
     template_name = 'MySite/index.html'
@@ -42,3 +42,15 @@ class ChangePasswordView(PasswordChangeView):
 class PasswordChangeDoneView(PasswordChangeDoneView):
     template_name = 'MySite/seguranca/password_change_done.html'
     success_url = reverse_lazy('home-sec')
+
+class FormularioView(TemplateView):
+    def get(self, request, *args, **kwargs):
+        form = FormularioExemplo()
+        return render(request, 'MySite/formulario.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = FormularioExemplo(request.POST)
+        if form.is_valid():
+            # Process the form data here
+            return redirect('formulario') # Redirect to the same page or another success page
+        return render(request, 'MySite/formulario.html', {'form': form})

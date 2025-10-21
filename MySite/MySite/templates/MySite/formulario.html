@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+</head>
+<body>
+    {% include 'contatos/links.html' %}
+    <h1>Exemplo de Formulario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table class="formulario">
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
