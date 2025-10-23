@@ -140,8 +140,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CORS_ORIGIN_WHITELIST = [
-'http://0.0.0.0:8080',
-'http://127.0.0.1:8080',
-'http://localhost:8080',
-# Adicione outras origens permitidas, se necessário
+    'https://bookish-rotary-phone-xvpg5xrq76529v96-3000.app.github.dev',
+    'https://bookish-rotary-phone-xvpg5xrq76529v96-8080.app.github.dev',
+    'http://0.0.0.0:8080',
+    'http://127.0.0.1:8080',
+    'http://localhost:8080',
 ]
